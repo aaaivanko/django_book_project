@@ -1,0 +1,17 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+
+    <p>This is single page for {{ single_topic }}</p>
+
+    <p>Entries:</p>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry.date_added }}</li>
+            <li>{{ entry.text|linebreaks }}</li>
+        {% empty %}
+            <li>There's no entry for this topic yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
